@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	let p1 = {
+		name: 'lwl',
+		old: '25'
+	}
+	function rename(person) {
+		person.name = '赖炜伦' // 指针没改变
+		person = { // 指针改变
+			name: 'lwl333',
+			old: '26'
+		}
+		return person
+	}
+	const p2 = rename(p1)
+	console.log(p1)
+	console.log(p2)
+	// 理解: 函数里面的person与p1有共同的指针,当person.name时,指针没变化有共同的地址,当给person赋值新的对象时,指针改变,所以没有修改p1的old值
+</script>
+</body>
+</html>
